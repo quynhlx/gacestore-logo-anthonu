@@ -20,11 +20,12 @@
             var outAnimationClasses = ['bounce-out-bck', 'puff-out-center', 'swing-out-right-bck']
 
             function animate() {
-              const random = Math.floor(Math.random() * 3);
-              addClass(inAnimationClasses[random]);
+              const randomIn = Math.floor(Math.random() * 3);
+              const randomOut = Math.floor(Math.random() * 3);
+              addClass(inAnimationClasses[randomIn]);
                 setTimeout(() => {
-                    addClass(outAnimationClasses[random]);
-                }, 5000);
+                    addClass(outAnimationClasses[randomOut]);
+                }, 10000);
             }
             
             animate();
