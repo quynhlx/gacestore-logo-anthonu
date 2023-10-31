@@ -16,10 +16,14 @@
                 document.getElementById('logo').className = className;
             }
 
+            var inAnimationClasses = ['slit-in-vertical','slide-in-blurred-top', 'tilt-in-fwd-tr']
+            var outAnimationClasses = ['bounce-out-bck', 'puff-out-center', 'swing-out-right-bck']
+
             function animate() {
-              addClass('tilt-in-fwd-tr');
+              const random = Math.floor(Math.random() * 3);
+              addClass(inAnimationClasses[random]);
                 setTimeout(() => {
-                    addClass('slide-out-blurred-right');
+                    addClass(outAnimationClasses[random]);
                 }, 5000);
             }
             
