@@ -1,13 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gace Store - Phụ Kiện Game</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Gace Store - Phụ Kiện Game</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
 
-<body>
-  <img src="logo.png" alt="">
-</body>
+    <body>
+        <img id="logo" src="logo.png" alt="" />
+        <script>
+            function addClass(className) {
+                document.getElementById('logo').className = className;
+            }
+
+            function animate() {
+              addClass('tilt-in-fwd-tr');
+                setTimeout(() => {
+                    addClass('slide-out-blurred-right');
+                }, 5000);
+            }
+            
+            animate();
+
+            setInterval(() => {
+                animate();
+            }, 20000);
+        </script>
+    </body>
 </html>
