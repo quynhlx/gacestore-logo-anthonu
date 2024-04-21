@@ -9,30 +9,49 @@
 
     <body>
         <div class="container">
-          <img id="logo" src="logo.png" alt="" />
+            <img id="logo" src="Anthonu1.png" alt="" />
         </div>
         <script>
+            let index = 0;
+
             function addClass(className) {
                 document.getElementById('logo').className = className;
             }
 
-            var inAnimationClasses = ['slit-in-vertical','slide-in-blurred-top', 'tilt-in-fwd-tr']
-            var outAnimationClasses = ['bounce-out-bck', 'puff-out-center', 'swing-out-right-bck']
+            function changeLogo() {
+                if (index === 4) {
+                    index = 0;
+                }
+                console.log(index);
+                document.getElementById('logo').src = `./Anthonu${++index}.png`;
+            }
+
+            var inAnimationClasses = [
+                'slit-in-vertical',
+                'slide-in-blurred-top',
+                'tilt-in-fwd-tr',
+            ];
+            var outAnimationClasses = [
+                'bounce-out-bck',
+                'puff-out-center',
+                'swing-out-right-bck',
+            ];
 
             function animate() {
-              const randomIn = Math.floor(Math.random() * 3);
-              const randomOut = Math.floor(Math.random() * 3);
-              addClass(inAnimationClasses[randomIn]);
+                const randomIn = Math.floor(Math.random() * 3);
+                const randomOut = Math.floor(Math.random() * 3);
+                addClass(inAnimationClasses[randomIn]);
                 setTimeout(() => {
                     addClass(outAnimationClasses[randomOut]);
-                }, 10000);
+                }, 5000);
             }
-            
+
             animate();
 
             setInterval(() => {
                 animate();
-            }, 20000);
+                changeLogo();
+            }, 6000);
         </script>
     </body>
 </html>
